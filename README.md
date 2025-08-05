@@ -19,13 +19,6 @@ This project allows users to manage train components through a table interface. 
 
 ---
 
-## 🌐 GitHub Pages Deployment
-
-This project is deployed using [GitHub Pages](https://pages.github.com/).
-
-### 🚀 Live URL
-👉 https://mariiatyshkovets.github.io/train-component-management/
-
 ## 🛠️ Development server
 
 To start a local development server, run:
@@ -131,6 +124,24 @@ This project was created as a test assignment. It simulates an admin tool for ma
 ## 📬 Feedback
 
 If you find a bug or want to suggest an improvement, feel free to open an issue or submit a pull request!
+
+---
+
+## 🌐 GitHub Pages Deployment
+
+This project is deployed using [GitHub Pages](https://pages.github.com/).
+
+### 🚀 Live URL
+👉 https://mariiatyshkovets.github.io/train-component-management/
+
+### 🛠️ How to deploy
+
+1. Build the project:
+   ```bash
+   ng build
+   ```
+
+This will publish the app to the `gh-pages` branch and make it available at the URL above.
 
 ---
 
