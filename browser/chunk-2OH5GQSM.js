@@ -1,0 +1,1 @@
+import{la as o,ra as t,sa as p,ua as a}from"./chunk-FTVTGPPF.js";var s=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=o({type:n,selectors:[["app-not-found"]],decls:2,vars:0,template:function(e,m){e&1&&(t(0,"p"),a(1,"not-found works!"),p())},encapsulation:2})};export{s as NotFoundComponent};
