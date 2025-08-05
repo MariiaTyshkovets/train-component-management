@@ -19,6 +19,13 @@ This project allows users to manage train components through a table interface. 
 
 ---
 
+## 🌐 GitHub Pages Deployment
+
+This project is deployed using [GitHub Pages](https://pages.github.com/).
+
+### 🚀 Live URL
+👉 https://mariiatyshkovets.github.io/train-component-management/
+
 ## 🛠️ Development server
 
 To start a local development server, run:
