@@ -62,7 +62,7 @@
   </button>
   }
 
-  <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+  <button (click)="nextPage()" [disabled]="currentPage() === totalPages()">
     Next &raquo;
   </button>
 </div>

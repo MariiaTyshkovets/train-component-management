@@ -1,4 +1,5 @@
 $primary-color: #177d9a;
+$primary-hover-color: rgba(12, 59, 74, 0.9);
 $primary-text-color: white;
 $border-color: #ddd;
 
@@ -144,6 +145,11 @@ $border-color: #ddd;
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled).active {
+      background-color: $primary-hover-color;
+      border-color: $primary-hover-color;
     }
 
     &.active {
