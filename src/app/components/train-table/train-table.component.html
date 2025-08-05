@@ -1,1 +1,68 @@
-<p>train-table works!</p>
+<table class="train-component-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Unique Number</th>
+      <th>Can Assign Quantity</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (component of paginated(); track component.id) {
+    <tr>
+      <td>{{ component.id }}</td>
+      <td>{{ component.name }}</td>
+      <td>{{ component.uniqueNumber }}</td>
+      <td>{{ component.canAssignQuantity ? "Yes" : "No" }}</td>
+      <td
+        (click)="startEdit(component)"
+        [class.can-update]="component.canAssignQuantity"
+      >
+        @if (editingId() === component.id) {
+        <div class="input-wrapper">
+          <input
+            #quantityInput
+            type="number"
+            min="1"
+            [class.error]="quantityControl.invalid"
+            [formControl]="quantityControl"
+            (blur)="finishEdit(component)"
+            (keydown)="onKeydown($event, component)"
+          />
+          @if (quantityControl.invalid && quantityControl.touched) {
+          <div class="tooltip-error">
+            @if (quantityControl.errors?.['required']) {
+            <small>This field is required</small>
+            } @else {
+            <small>Enter a positive integer</small>
+            }
+          </div>
+          }
+        </div>
+        } @else {
+        <span>{{
+          component.canAssignQuantity ? component.quantity ?? "--" : "N/A"
+        }}</span>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage() === 1">
+    &laquo; Prev
+  </button>
+
+  @for (page of totalPagesArray(); track page) {
+  <button [class.active]="currentPage() === page" (click)="goToPage(page)">
+    {{ page }}
+  </button>
+  }
+
+  <button (click)="nextPage()" [disabled]="currentPage() === totalPages()">
+    Next &raquo;
+  </button>
+</div>
