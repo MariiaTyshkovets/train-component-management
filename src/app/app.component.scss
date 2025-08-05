@@ -1,0 +1,9 @@
+.app-wrapper {
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .app-wrapper {
+    padding: 10px;
+  }
+}
