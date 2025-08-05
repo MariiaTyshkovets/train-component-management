@@ -1,0 +1,225 @@
+$primary-color: #177d9a;
+$primary-hover-color: rgba(12, 59, 74, 0.9);
+$primary-text-color: white;
+$border-color: #ddd;
+
+.train-component-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  thead th:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  thead th:last-child {
+    border-top-right-radius: 8px;
+  }
+
+  tbody tr:last-child {
+    td:first-child {
+      border-bottom-left-radius: 8px;
+    }
+    td:last-child {
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.6rem 0.45rem;
+    border: 1px solid $border-color;
+    text-align: left;
+  }
+
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  th {
+    background-color: $primary-color;
+    color: $primary-text-color;
+    font-weight: 600;
+  }
+
+  td {
+    cursor: default;
+  }
+
+  td:nth-child(5).can-update:hover {
+    cursor: pointer;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 5%;
+  } // ID
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 20%;
+  } // Name
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 20%;
+  } // Unique Number
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 15%;
+  } // Can Assign
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: 20%;
+  } // Quantity
+
+  td span {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: calc(0.2rem + 2px);
+  }
+
+  td input[type="number"] {
+    -moz-appearance: textfield; // Firefox
+    appearance: textfield; // Chrome, Safari
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: #177d9a;
+      box-shadow: 0 0 0 2px rgba(23, 125, 154, 0.2);
+    }
+
+    &.error {
+      border-color: #9a1717;
+      box-shadow: 0 0 0 2px rgb(154, 23, 23, 0.2);
+    }
+  }
+
+  .can-update {
+    position: relative;
+    .text-error {
+      position: absolute;
+      top: 25px;
+    }
+  }
+
+  /* Remove spin buttons (Chrome, Safari) */
+  td input[type="number"]::-webkit-inner-spin-button,
+  td input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  button {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid $border-color;
+    background-color: #fff;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 40px;
+    transition: all 0.2s ease;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled).active {
+      background-color: $primary-hover-color;
+      border-color: $primary-hover-color;
+    }
+
+    &.active {
+      background-color: $primary-color;
+      color: $primary-text-color;
+      border-color: $primary-color;
+    }
+
+    &:hover:not(:disabled):not(.active) {
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-error {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  z-index: 10;
+  background-color: #9a1717;
+  color: white;
+  padding: 2px 8px 4px 8px;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+  margin-top: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  table.train-component-table {
+    font-size: 13px;
+
+    th,
+    td {
+      padding: 0.3rem 0.4rem;
+    }
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+
+    button {
+      padding: 0.3rem 0.5rem;
+      font-size: 13px;
+    }
+  }
+
+  td input[type="number"] {
+    font-size: 13px;
+    padding: 0.3rem 0.4rem;
+  }
+}
