@@ -62,7 +62,7 @@ $border-color: #ddd;
 
   th:nth-child(1),
   td:nth-child(1) {
-    width: 5%;
+    width: 6%;
   } // ID
   th:nth-child(2),
   td:nth-child(2) {
@@ -74,7 +74,7 @@ $border-color: #ddd;
   } // Unique Number
   th:nth-child(4),
   td:nth-child(4) {
-    width: 15%;
+    width: 14%;
   } // Can Assign
   th:nth-child(5),
   td:nth-child(5) {
@@ -107,14 +107,6 @@ $border-color: #ddd;
     &.error {
       border-color: #9a1717;
       box-shadow: 0 0 0 2px rgb(154, 23, 23, 0.2);
-    }
-  }
-
-  .can-update {
-    position: relative;
-    .text-error {
-      position: absolute;
-      top: 25px;
     }
   }
 
@@ -171,10 +163,10 @@ $border-color: #ddd;
 
 .tooltip-error {
   position: absolute;
-  top: 100%;
-  width: 100%;
+  top: -100%;
   left: 0;
-  z-index: 10;
+  width: 100%;
+  z-index: 1000;
   background-color: #9a1717;
   color: white;
   padding: 2px 8px 4px 8px;
@@ -204,7 +196,7 @@ $border-color: #ddd;
 
     th,
     td {
-      padding: 0.3rem 0.4rem;
+      padding: 0.2rem 0.3rem;
     }
   }
 
