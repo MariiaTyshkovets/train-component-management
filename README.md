@@ -138,7 +138,7 @@ This project is deployed using [GitHub Pages](https://pages.github.com/).
 
 1. Build the project:
    ```bash
-   ng build
+   ng deploy
    ```
 
 This will publish the app to the `gh-pages` branch and make it available at the URL above.
